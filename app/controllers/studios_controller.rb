@@ -10,12 +10,12 @@ class StudiosController < ApplicationController
     end
 
     def new
-        @studio = Studio.new
+        @studio = Studio.new(:user_ids => params[:user_id])
     end
 
     def create
         @studio = Studio.create(studio_params)
-        redirect_to user_studios_path(@user, @studios)
+        redirect_to @studio
     end
 
     def show
@@ -24,7 +24,7 @@ class StudiosController < ApplicationController
     private
 
     def studio_params
-        params.require(:studio).permit(:name, :category, :user_id)
+        params.require(:studio).permit(:name, :category, :user_ids)
     end
 
     def set_studio
