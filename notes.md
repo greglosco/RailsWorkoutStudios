@@ -10,10 +10,10 @@ user
     -pw_digest
 
 studio * joining users & instructors
--belongs to users.
+-has many users.
 -has many reviews.
--has many commenting users through reviews source :user
--belongs to instructor
+<!-- -has many reviewing users through reviews source :user -->
+-has many instructor
     -name
     -category
 
