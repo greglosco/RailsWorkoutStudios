@@ -24,7 +24,7 @@ class StudiosController < ApplicationController
     private
 
     def studio_params
-        params.require(:studio).permit(:name, :category)
+        params.require(:studio).permit(:name, :category, :user_id)
     end
 
     def set_studio
