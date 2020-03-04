@@ -15,7 +15,7 @@ class StudiosController < ApplicationController
 
     def create
         @studio = Studio.create(studio_params)
-        redirect_to user_studio_path(@current_user, @studio)
+        redirect_to user_studios_path(@user, @studios)
     end
 
     def show

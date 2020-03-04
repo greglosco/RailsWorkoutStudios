@@ -1,2 +1,4 @@
 <h3><%= @studio.name %></h3><br>
-<%= @studio.category %>
+<%= @studio.category %><br>
+<br>
+<%= link_to "Your Studios", user_studios_path(@current_user, @current_user.studios) %>
