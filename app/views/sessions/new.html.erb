@@ -1,0 +1,13 @@
+<h1>Log In</h1>
+<%= form_tag 'sessions#create' do %>
+    <label> Username </label>
+    <%= text_field_tag :'username' %>
+    <br> <br>
+    <label> Email </label>
+    <%= email_field_tag :'email' %>
+    <br> <br>
+    <label> Password </label>
+    <%= password_field_tag :'password' %>
+    <br> <br>
+    <%= submit_tag 'Login' %>
+<% end %>
