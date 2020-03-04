@@ -26,10 +26,8 @@ ActiveRecord::Schema.define(version: 2020_03_04_020232) do
   create_table "studios", force: :cascade do |t|
     t.string "name"
     t.string "category"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_studios_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
