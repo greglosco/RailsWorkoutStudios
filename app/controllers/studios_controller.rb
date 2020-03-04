@@ -1,7 +1,11 @@
 class StudiosController < ApplicationController
 
     def index
-        @studios = Studio.all
+        if params[:user_id]
+            @studios = User.find(params[:user_id]).studios
+        else
+            @studios = Studio.all
+        end
     end
 
     def new
@@ -18,5 +22,9 @@ class StudiosController < ApplicationController
 
     def studio_params
         params.require(:studio).require(:name, :category)
+    end
+
+    def set_studio
+        @studio = Studio.find(params[:id])
     end
 end
