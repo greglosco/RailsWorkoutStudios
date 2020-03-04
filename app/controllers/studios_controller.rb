@@ -14,6 +14,8 @@ class StudiosController < ApplicationController
     end
 
     def create
+        @studio = Studio.create(studio_params)
+        redirect_to @studio
     end
 
     def show
@@ -22,7 +24,7 @@ class StudiosController < ApplicationController
     private
 
     def studio_params
-        params.require(:studio).require(:name, :category)
+        params.require(:studio).permit(:name, :category)
     end
 
     def set_studio

@@ -1,0 +1,9 @@
+<%= form_for @studio do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br> <br>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+    <br> <br>
+    <%= f.submit 'Add Studio' %>
+<% end %>
