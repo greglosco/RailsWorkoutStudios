@@ -2,6 +2,8 @@
 
 <ol>
 <% @reviews.each do |review| %>
-    <li><%= link_to review.studio, user_review_path(@current_user, review) %> 
+    <li><%= link_to @current_user.reviews, user_review_path(@current_user, review) %> 
 <% end %>
 </ol>
+
+<%= link_to "Back to Account Page", user_path(@user) %>
