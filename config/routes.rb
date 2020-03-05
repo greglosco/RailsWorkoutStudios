@@ -5,14 +5,13 @@ Rails.application.routes.draw do
   post '/login', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'  
   
-  resources :reviews do
-    resources :users
-  end
+  resources :reviews
   resources :studios do
     resources :users 
   end
   resources :users do 
     resources :studios 
+    resources :reviews
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
