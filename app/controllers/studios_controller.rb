@@ -1,3 +1,5 @@
+require 'pry'
+
 class StudiosController < ApplicationController
     before_action :set_studio, :only => :show
 
@@ -15,7 +17,7 @@ class StudiosController < ApplicationController
 
     def create
         @studio = Studio.create(studio_params)
-        redirect_to @studio
+        redirect_to user_studio_path(@current_user, @studio)
     end
 
     def show
