@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, :only => :show 
+    before_action :set_user, :only => [:show, :destroy]
 
     def new
         @user = User.new
@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
 
     def show
+    end
+
+    def destroy
+        @user.destroy 
+        redirect_to root_path
     end
 
     private
