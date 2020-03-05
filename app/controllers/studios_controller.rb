@@ -1,7 +1,7 @@
 require 'pry'
 
 class StudiosController < ApplicationController
-    before_action :set_studio, :only => [:show, :edit, :update, :destory]
+    before_action :set_studio, :only => [:show, :edit, :update, :destroy]
 
     def index
         @user = User.find_by(:id => params[:user_id])
@@ -30,7 +30,7 @@ class StudiosController < ApplicationController
 
     def destroy
         @studio.destroy 
-        redirect_to user_studios_path
+        redirect_to user_studios_path(@current_user)
     end
 
 
