@@ -1,4 +1,5 @@
 <h3>Name: <%= @studio.name %></h3><br>
 Category: <%= @studio.category %><br>
 <br><br>
-<%= link_to "Your Studios", user_studios_path(@current_user) %>
+<%= link_to "Edit Studio Details", edit_studio_path(@studio) %>
+<%= link_to "Back to Your Studios", user_studios_path(@current_user) %>
