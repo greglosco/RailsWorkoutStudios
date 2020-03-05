@@ -5,12 +5,17 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(:username => params[:username])
-        if @user.authenticate(params[:password])
-            session[:user_id] = @user.id
-            redirect_to @user
+        if !User.find_by(:username => params[:username]).nil?
+            @user = User.find_by(:username => params[:username])
+            if @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect_to @user
+            else
+                render 'sessions/new'
+            end
         else
-            render 'sessions/new'
+            flash[:notice] = "You must sign up before logging in!!"
+            redirect_to '/signup'
         end
     end
 
