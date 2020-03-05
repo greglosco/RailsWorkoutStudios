@@ -1,10 +1,13 @@
 class ReviewsController < ApplicationController
+    before_action :set_review, :only => [:show, :edit, :update, :destroy]
 
     def new
         @review = Review.new(:user_id => params[:user_id])
     end
 
     def create
+        @review = Review.create(review_params)
+        redirect_to user_review_path(@current_user, @review)
     end
 
     def show
@@ -19,6 +22,5 @@ class ReviewsController < ApplicationController
     def set_review
         @review = Review.find(params[:id])
     end
-
 
 end
