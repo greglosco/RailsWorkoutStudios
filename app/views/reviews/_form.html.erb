@@ -1,4 +1,7 @@
 <%= form_for @review do |f| %>
+    <%= f.label :studio_name %>
+    <%= f.text_field :studio_name %>
+    <br> <br>
     <%= f.label :rating %>
     <%= f.number_field :rating, max: 5, min: 0 %>/5
     <br> <br>
