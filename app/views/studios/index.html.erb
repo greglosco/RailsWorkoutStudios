@@ -2,9 +2,9 @@
 
 <ol>
 <% @studios.each do |studio| %>
-    <li><%= link_to studio.name, user_studio_path(@current_user, studio) %> - <%= studio.category %> - <%= link_to "Edit Studio Details", edit_studio_path(studio) %></li><br>
+    <li><%= link_to studio.name, user_studio_path(@current_user, studio) %> - <%= studio.category %> - <%= link_to "Edit Studio Details", edit_studio_path(studio) %> - <%= link_to "Delete Studio", studio, :method => :delete %></li><br>
 <% end %>
 </ol>
 
-<%= link_to "Add a new studio", new_user_studio_path(@user) %> 
+<%= link_to "Add a new studio", new_user_studio_path(@user) %><br>
 <%= link_to "Back to Account Page", user_path(@user) %>
