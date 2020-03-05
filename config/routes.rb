@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/login', :to => 'sessions#new'
   post '/login', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'  
+  get '/auth/github/callback' => 'sessions#create'
   
   resources :reviews
   resources :studios do
