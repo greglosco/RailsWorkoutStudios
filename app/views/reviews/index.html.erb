@@ -1,0 +1,7 @@
+<h1>Your Reviews</h1>
+
+<ol>
+<% @reviews.each do |review| %>
+    <li><%= link_to review.studio, user_review_path(@current_user, review) %> 
+<% end %>
+</ol>
