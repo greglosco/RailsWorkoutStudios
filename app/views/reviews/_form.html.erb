@@ -1,6 +1,6 @@
 <%= form_for @review do |f| %>
     <%= f.label :studio_name %>
-    <%= f.collection_select :studio_name, Studio.all, :name, :name %>
+    <%= f.collection_select :studio_name, Studio.all, :id, :name %>
     <br> <br>
     <%= f.label :rating %>
     <%= f.number_field :rating, max: 5, min: 0 %>/5
