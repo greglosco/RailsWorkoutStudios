@@ -2,7 +2,7 @@
 
 <ol>
 <% @studios.each do |studio| %>
-    <li><%= link_to studio.name, studio_path(studio) %> - <%= studio.category %></li><br>
+    <li><%= link_to studio.name, studio_path(studio) %> - <%= studio.category %> - <%= link_to "Edit Studio Details", edit_studio_path(studio) %></li><br>
 <% end %>
 </ol>
 
