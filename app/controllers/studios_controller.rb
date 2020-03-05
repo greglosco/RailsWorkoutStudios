@@ -24,7 +24,7 @@ class StudiosController < ApplicationController
     end
 
     def update
-        @studio = Studio.update(studio_params)
+        @studio.update(studio_params)
         redirect_to user_studio_path(@current_user, @studio)
     end
 
