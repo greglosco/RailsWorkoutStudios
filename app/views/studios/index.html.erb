@@ -1,10 +1,9 @@
 <h1>Your Studios</h1>
 
+<ol>
 <% @studios.each do |studio| %>
-    <ol>
-    <li><%= studio.name %></li><br>
-        <%= studio.category %><br>
-    </ol>
+    <li><%= studio.name %> - <%= studio.category %></li><br>
 <% end %>
+</ol>
 
-<%= link_to "Add a
+<%= link_to "Add a new studio", new_user_studio_path(@user) %> 
