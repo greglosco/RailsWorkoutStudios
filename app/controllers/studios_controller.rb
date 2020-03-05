@@ -4,11 +4,7 @@ class StudiosController < ApplicationController
     before_action :set_studio, :only => :show
 
     def index
-        if params[:user_id]
-            @studios = User.find(params[:user_id]).studios
-        else
-            @studios = Studio.all
-        end
+        @studios = User.find(params[:user_id]).studios
     end
 
     def new

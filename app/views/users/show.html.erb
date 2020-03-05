@@ -1,5 +1,5 @@
 <h1>Welcome <%="#{@user.username}"%></h1>
 
-<%= link_to "Your Studios", user_studios_path(@current_user,@current_user.studios) %><br>
+<%= link_to "Your Studios", user_studios_path(@current_user) %><br>
 <%= link_to "Add a Studio", new_user_studio_path(@user) %><br>
 <%= link_to "Log Out", '/logout' %>
