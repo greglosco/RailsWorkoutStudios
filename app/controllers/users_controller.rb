@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, :only => :show 
 
-
     def new
         @user = User.new
     end
@@ -9,7 +8,7 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
         if @user 
-            session[:user_id] = params[:id]
+            session[:user_id] = @user.id
             redirect_to @user
         else
             render :new
