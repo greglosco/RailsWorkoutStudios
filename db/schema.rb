@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_03_04_020232) do
 
   create_table "reviews", force: :cascade do |t|
+    t.string "studio"
     t.integer "rating"
     t.text "content"
     t.integer "user_id"

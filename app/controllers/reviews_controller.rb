@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
     def index
         @user = User.find_by(:id => params[:user_id])
         @reviews = @user.reviews
-        raise params.inspect
     end
 
     def new
@@ -17,6 +16,19 @@ class ReviewsController < ApplicationController
     end
 
     def show
+    end
+
+    def edit
+    end
+
+    def update
+        @review.update(review_params)
+        redirect_to user_review_path(@current_user, @review)
+    end
+
+    def destroy
+        @review.destroy 
+        redirect_to user_reviews_path(@current_user)
     end
 
     private
