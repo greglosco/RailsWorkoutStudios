@@ -1,6 +1,6 @@
 <%= form_for @review do |f| %>
-    <%= f.label :studio_name %>
-    <%= f.collection_select :studio_id, Studio.all, :id, :name %>
+    <%= f.label :studio %>
+    <%= f.collection_select :studio, Studio.all, :id, :name %>
     <%= hidden_field 'review', "user_id", :value => @current_user.id %>
     <br><br>
     <%= f.label :rating %>

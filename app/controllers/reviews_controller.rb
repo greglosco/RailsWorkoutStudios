@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     def index
         @user = User.find_by(:id => params[:user_id])
         @reviews = @user.reviews
+        raise params.inspect
     end
 
     def new

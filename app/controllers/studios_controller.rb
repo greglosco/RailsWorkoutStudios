@@ -6,6 +6,7 @@ class StudiosController < ApplicationController
     def index
         @user = User.find_by(:id => params[:user_id])
         @studios = @user.studios
+        raise params.inspect
     end
 
     def new
