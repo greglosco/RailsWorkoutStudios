@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     before_action :set_user, :only => [:show, :edit, :update, :destroy]
 
+    def index
+        @studio = Studio.find_by(:id => params[:studio_id])
+        @users = @studio.users 
+    end
+    
     def new
         @user = User.new
     end

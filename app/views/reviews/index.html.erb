@@ -2,7 +2,7 @@
 
 <ol>
 <% @reviews.each do |review| %>
-    <li><%= link_to @current_user.reviews.studio, user_review_path(@current_user, review) %> 
+    <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> 
 <% end %>
 </ol>
 
