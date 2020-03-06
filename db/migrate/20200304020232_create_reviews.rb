@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :studio
       t.integer :rating
       t.text :content
+      
       t.belongs_to :user, foreign_key: true
       t.belongs_to :studio, foreign_key: true
 
