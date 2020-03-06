@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        
     end
 
     def edit
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
     end
 
     def set_user
+        # raise params.inspect
         @user = User.find(params[:id])
     end
 
