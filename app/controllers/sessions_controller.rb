@@ -15,9 +15,13 @@ class SessionsController < ApplicationController
              redirect_to @user
         else
             @user = User.find_by(:username => params[:username])
-            @user.authenticate(params[:password])
-            session[:user_id] = @user.id
-            redirect_to @user
+            if @user.nil?
+                render :new
+            else 
+                @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect_to @user
+            end
         end
     end
 
