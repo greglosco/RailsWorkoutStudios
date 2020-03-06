@@ -5,19 +5,13 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if !User.find_by(:username => params[:username]).nil?
-            @user = User.find_by(:username => params[:username])
-            if @user.authenticate(params[:password])
-                session[:user_id] = @user.id
-                redirect_to @user
-            else
-                render 'sessions/new'
-            end
+        auth = request.env["omniauth.auth"]
+        if auth
+          sign_in_with_auth(auth)
         else
-            flash[:notice] = "You must sign up before logging in!!"
-            redirect_to '/signup'
+          sign_in_with_password
         end
-    end
+      end
 
     def destroy
         session.destroy

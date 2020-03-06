@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root :to => 'welcome#home'
+  root 'welcome#home'
   get '/signup', :to => 'users#new'
   get '/login', :to => 'sessions#new'
   post '/login', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'  
-  get '/auth/github/callback' => 'sessions#create'
+  match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
   
   resources :reviews
   resources :studios do
