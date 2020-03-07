@@ -28,6 +28,9 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+        if @review && @review.user == @current_user
+        else redirect_to '/reviewindex'
+        end
     end
 
     def update
@@ -36,8 +39,11 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        @review.destroy 
-        redirect_to user_reviews_path(@current_user)
+        if @review && @review.user == @current_user
+            @review.destroy 
+            redirect_to user_reviews_path(@current_user)
+        else redirect_to '/reviewindex'
+        end
     end
 
     private
