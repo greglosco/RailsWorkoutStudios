@@ -3,6 +3,10 @@
 <ol>
 <% @studios.each do |studio| %>
     <li><%= link_to studio.name, user_studio_path(@current_user, studio) %> - <%= studio.category %> - <%= link_to "Edit Studio Details", edit_studio_path(studio) %> - <%= link_to "Delete Studio", studio, :method => :delete %></li> - Added By:<%=  studio.user.username %><br><br>
+    
+    <% if studio.user == @current_user %>
+        <%= link_to "Write a Review", new_user_review_path(studio.user) %><br><br>
+    <% end %>
 <% end %>
 </ol>
 

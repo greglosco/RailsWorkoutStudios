@@ -3,6 +3,10 @@ Category: <%= @studio.category %><br>
 
 <br><br>
 
+<% if @studio.user == @current_user %>
+        <%= link_to "Write a Review", new_user_review_path(@studio.user) %><br><br>
+<% end %>
+
 <%= link_to "See Members", studio_users_path(@studio) %><br><br>
 <%= link_to "See Reviews of this Studio", studio_reviews_path(@studio) %><br><br>
 <%= link_to "Edit Studio Details", edit_studio_path(@studio) %><br><br>
