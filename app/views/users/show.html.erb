@@ -1,5 +1,6 @@
 <h1>Welcome <%="#{@user.username}"%></h1>
 
+<%= link_to "See All Studios", '/studioindex' %><br>
 <%= link_to "Your Studios", user_studios_path(@current_user) %><br>
 <%= link_to "Add a Studio", new_user_studio_path(@user) %><br><br>
 
