@@ -8,8 +8,7 @@ class StudiosController < ApplicationController
     end
 
     def reviewed
-        @studios = Studio.all
-        @studios.reviewed
+        @reviewed_studios = Studio.reviewed
     end
 
     def index

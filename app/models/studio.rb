@@ -6,7 +6,7 @@ class Studio < ApplicationRecord
 
 
   def self.reviewed
-    joins(:review).where("studio_id").exists?
+    where(:reviews => !nil)
   end
 
 end
