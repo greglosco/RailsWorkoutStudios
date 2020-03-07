@@ -3,4 +3,10 @@ class Studio < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
   validates :name, presence: true
+
+
+  def self.reviewed
+    joins(:review).where("studio_id").exists?
+  end
+
 end

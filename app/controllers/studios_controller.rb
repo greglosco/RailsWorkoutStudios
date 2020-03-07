@@ -7,6 +7,11 @@ class StudiosController < ApplicationController
         @studios = Studio.all
     end
 
+    def reviewed
+        @studios = Studio.all
+        @studios.reviewed
+    end
+
     def index
         @user = User.find_by(:id => params[:user_id])
         @studios = @user.studios
