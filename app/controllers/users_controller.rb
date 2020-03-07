@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def index
         @studio = Studio.find_by(:id => params[:studio_id])
-        @users = @studio.users 
+        @user = @studio.user 
     end
     
     def new
@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        
     end
 
     def edit
@@ -41,11 +40,10 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :password, :studio_id)
     end
 
     def set_user
-        # raise params.inspect
         @user = User.find(params[:id])
     end
 

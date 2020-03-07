@@ -1,5 +1,5 @@
 <%= form_for @studio do |f| %>
-    <%= f.hidden_field 'user_ids', :value => @current_user.id %>
+    <%= f.hidden_field 'user_id', :value => @current_user.id %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br> <br>

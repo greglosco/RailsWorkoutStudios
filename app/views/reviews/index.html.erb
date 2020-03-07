@@ -1,12 +1,10 @@
 <h1>Your Reviews</h1>
 
-<% if !@review.nil? %> 
     <ol>
     <% @reviews.each do |review| %>
         <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
     <% end %>
     </ol>
-<% end %>
 
 <%= link_to "Add a new review", new_user_review_path(@user) %><br>
 <%= link_to "Back to Account Page", user_path(@user) %>

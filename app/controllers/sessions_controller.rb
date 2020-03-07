@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
                 u.username = auth['info']['nickname']
                 u.email = auth['info']['email']
                 u.password = SecureRandom.uuid
+                u.uid = auth['info']['uid']
              end
              session[:user_id] = @user.id
              redirect_to @user
