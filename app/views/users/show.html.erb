@@ -4,9 +4,13 @@
 <%= link_to "Add a Studio", new_user_studio_path(@user) %><br>
 <%= link_to "See All Studios", '/studioindex' %><br><br>
 
+<%= link_to "See All 5-star Studios", '/studioindex' %><br><br>
+
 <%= link_to "Your Reviews", user_reviews_path(@current_user) %><br>
 <%= link_to "Write a Review", new_user_review_path(@user) %><br>
 <%= link_to "See All Reviews", '/reviewindex' %><br><br>
+
+<%= link_to "See All Reviewed Studios", '/reviewindex' %><br><br>
 
 <h3>Account Settings</h3>
 <%= link_to "Edit Account Details", edit_user_path(@user) %><br>

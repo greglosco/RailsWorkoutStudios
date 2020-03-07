@@ -2,7 +2,7 @@
 
     <ol>
     <% @reviews.each do |review| %>
-        <li>Reviewer: <%= review.user.username %> - Review Of: <%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
+        <li>Reviewer: <%= review.user.username %> - Review Of: <%= link_to review.studio.name, user_review_path(@current_user, review) %> - Rating:<%= review.rating %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
     <% end %>
     </ol>
 
