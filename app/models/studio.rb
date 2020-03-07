@@ -9,4 +9,8 @@ class Studio < ApplicationRecord
     where(:reviews => !nil)
   end
 
+  def self.five_stars
+    where(:rating => 5)
+  end
+
 end

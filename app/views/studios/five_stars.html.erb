@@ -1,7 +1,7 @@
-<h1>Reviewed Studios</h1>
+<h1>Five Star Studios</h1>
 
 <ol>
-<% @reviewed_studios.each do |studio| %>
+<% @five_star_studios.each do |studio| %>
     <li><%= link_to studio.name, user_studio_path(@current_user, studio) %> - <%= studio.category %> - <%= link_to "Edit Studio Details", edit_studio_path(studio) %> - <%= link_to "Delete Studio", studio, :method => :delete %></li><br>
 <% end %>
 </ol>
