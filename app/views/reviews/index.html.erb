@@ -1,9 +1,9 @@
 <h1>Your Reviews</h1>
 
     <ol>
-    <% @reviews.each do |review| %>
-        <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
-    <% end %>
+        <% @reviews.each do |review| %>
+            <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
+        <% end %>
     </ol>
 
 <%= link_to "Add a new review", new_user_review_path(@user) %><br>

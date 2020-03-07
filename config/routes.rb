@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   post '/login', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'  
   get '/studioindex', :to => 'studios#index_all'
+  get '/reviewindex', :to => 'reviews#index_all'
   match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
   
   resources :reviews
   resources :studios do
     resources :users 
+    resources :reviews
   end
   resources :users do 
     resources :studios 

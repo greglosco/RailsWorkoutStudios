@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
     before_action :set_review, :only => [:show, :edit, :update, :destroy]
 
+    def index_all
+        @reviews = Review.all
+    end
+    
     def index
         @user = User.find_by(:id => params[:user_id])
         @reviews = @user.reviews
