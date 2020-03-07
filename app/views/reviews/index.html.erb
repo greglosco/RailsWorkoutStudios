@@ -1,4 +1,8 @@
-<h1>Your Reviews</h1>
+<% if @user %>
+    <h1>Your Reviews</h1>
+<% else %>
+    <h1>Reviews of <%= @studio.name %></h1>
+<% end %>
 
     <ol>
         <% @reviews.each do |review| %>
@@ -6,5 +10,5 @@
         <% end %>
     </ol>
 
-<%= link_to "Add a new review", new_user_review_path(@user) %><br>
-<%= link_to "Back to Account Page", user_path(@user) %>
+<%= link_to "Add a new review", new_user_review_path(@current_user) %><br>
+<%= link_to "Back to Account Page", user_path(@current_user) %>

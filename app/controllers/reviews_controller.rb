@@ -6,8 +6,13 @@ class ReviewsController < ApplicationController
     end
     
     def index
-        @user = User.find_by(:id => params[:user_id])
-        @reviews = @user.reviews
+        if params[:user_id]
+            @user = User.find_by(:id => params[:user_id])
+            @reviews = @user.reviews
+        else 
+            @studio = Studio.find_by(:id => params[:studio_id])
+            @reviews = @studio.reviews 
+        end
     end
 
     def new
