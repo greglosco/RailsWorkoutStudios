@@ -21,7 +21,11 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.create(review_params)
-        redirect_to user_review_path(@current_user, @review)
+        if @review.valid?
+            redirect_to user_review_path(@current_user, @review)
+        else
+            render :new
+        end
     end
 
     def show

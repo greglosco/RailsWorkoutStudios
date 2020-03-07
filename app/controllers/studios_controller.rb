@@ -18,7 +18,11 @@ class StudiosController < ApplicationController
 
     def create
         @studio = Studio.create(studio_params)
-        redirect_to user_studio_path(@current_user, @studio)
+        if @studio.valid?
+            redirect_to user_studio_path(@current_user, @studio)
+        else
+            render :new
+        end
     end
 
     def show

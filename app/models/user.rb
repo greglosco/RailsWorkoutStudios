@@ -5,5 +5,6 @@ class User < ApplicationRecord
     has_many :reviews
     has_many :reviewed_studios, through: :reviews, source: :studio
 
-    # validates :username, presence: true
+    validates :username, presence: true
+    validates :email, presence: true
 end
