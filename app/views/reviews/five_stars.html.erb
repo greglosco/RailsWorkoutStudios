@@ -1,0 +1,9 @@
+<h1>Five Star Reviews</h1>
+
+<ol>
+    <% @five_star_reviews.each do |review| %>
+        <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
+    <% end %>
+</ol>
+
+<%= link_to "Back to Account Page", user_path(@current_user) %>

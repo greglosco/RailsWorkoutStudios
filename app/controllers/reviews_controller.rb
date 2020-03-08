@@ -15,6 +15,10 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def five_stars
+        @five_star_reviews = Review.five_stars
+    end
+
     def new
         @review = Review.new(:user_id => params[:user_id])
     end

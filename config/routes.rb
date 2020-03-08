@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   get '/logout', :to => 'sessions#destroy'  
   get '/studioindex', :to => 'studios#index_all'
   get '/reviewindex', :to => 'reviews#index_all'
-  get '/reviewed', :to => 'studios#reviewed'
-  get '/five_stars', :to => 'studios#five_stars'
+  get '/five_stars', :to => 'reviews#five_stars'
   match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
   
   resources :reviews
