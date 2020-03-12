@@ -41,3 +41,16 @@ set instance variable to user params
 if @user.save
 session[:user_id] = @user.id
 
+
+
+REVIEW NOTES
+
+authenticate so a user cannot sign in without a password
+
+create actions -- use .new, then call save
+
+(redirect = new HTTP request)
+
+refactor two index routes 
+
+add styling!!

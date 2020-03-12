@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/login', :to => 'sessions#new'
   post '/login', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'  
-  get '/studioindex', :to => 'studios#index_all'
+  # get '/studioindex', :to => 'studios#index_all'
   get '/reviewindex', :to => 'reviews#index_all'
   get '/five_stars', :to => 'reviews#five_stars'
   match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]

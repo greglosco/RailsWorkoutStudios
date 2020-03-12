@@ -1,17 +1,19 @@
 class ReviewsController < ApplicationController
     before_action :set_review, :only => [:show, :edit, :update, :destroy]
 
-    def index_all
-        @reviews = Review.all
-    end
+    # def index_all
+    #     @reviews = Review.all
+    # end
     
     def index
         if params[:user_id]
             @user = User.find_by(:id => params[:user_id])
             @reviews = @user.reviews
-        else 
+        elsif params[:studio_id]
             @studio = Studio.find_by(:id => params[:studio_id])
             @reviews = @studio.reviews 
+        else
+            @reviews = Review.all 
         end
     end
 

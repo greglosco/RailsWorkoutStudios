@@ -3,13 +3,17 @@ require 'pry'
 class StudiosController < ApplicationController
     before_action :set_studio, :only => [:show, :edit, :update, :destroy]
 
-    def index_all 
-        @studios = Studio.all
-    end
+    # def index_all 
+    #     @studios = Studio.all
+    # end
     
     def index
-        @user = User.find_by(:id => params[:user_id])
-        @studios = @user.studios
+        if params[:user_id]
+            @user = User.find_by(:id => params[:user_id])
+            @studios = @user.studios
+        else
+            @studios = Studio.all
+        end
     end
 
     def new
