@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
             if @user.nil?
                 render :new
             else 
-                @user.authenticate(params[:password])
+                return head(:forbidden) unless @user.authenticate(params[:password])
                 session[:user_id] = @user.id
                 redirect_to @user
             end
