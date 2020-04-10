@@ -8,9 +8,10 @@
 
     <ol>
         <% @reviews.each do |review| %>
-            <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
+            <li>Review of <%= link_to review.studio.name, user_review_path(@current_user, review) %> <span><%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %></span> <span><%= link_to "Delete Review", review, :method => :delete %></span></li><br><br>
         <% end %>
     </ol>
+    <br>
 
-<%= link_to "Add a new review", new_user_review_path(@current_user) %><br>
-<%= link_to "Back to Account Page", user_path(@current_user) %>
+<span><%= link_to "Add a new review", new_user_review_path(@current_user) %></span>
+<span><%= link_to "Back to Account Page", user_path(@current_user) %></span>

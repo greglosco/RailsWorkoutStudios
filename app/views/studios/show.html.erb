@@ -1,14 +1,20 @@
-<h3>Name: <%= @studio.name %></h3><br>
-Category: <%= @studio.category %><br>
+<h1>Name: <%= @studio.name %></h1>
+<h3>Category: <%= @studio.category %></h3>
 
-<br><br>
 
-<% if @studio.user == @current_user %>
-        <%= link_to "Write a Review", new_user_review_path(@studio.user) %><br><br>
-<% end %>
+<div>
+        <% if @studio.user == @current_user %>
+                <h5>Admin</h5>
+                <span><%= link_to "Write a Review", new_user_review_path(@studio.user)%></span>
+                <span><%= link_to "Edit Studio Details", edit_studio_path(@studio) %></span>
+                <span><%= link_to "Delete Studio", @studio, :method => :delete %></span>
+        <% end %>
+</div>
 
-<%= link_to "See Members", studio_users_path(@studio) %><br><br>
-<%= link_to "See Reviews of this Studio", studio_reviews_path(@studio) %><br><br>
-<%= link_to "Edit Studio Details", edit_studio_path(@studio) %><br><br>
-<%= link_to "Delete Studio", @studio, :method => :delete %><br><br>
-<%= link_to "Back to Your Studios", user_studios_path(@current_user) %>
+<h5>More Studio Information</h5>
+<div>
+        <span><%= link_to "See Members", studio_users_path(@studio) %></span>
+        <span><%= link_to "See Reviews of this Studio", studio_reviews_path(@studio) %></span>
+        <span><%= link_to "Back to Your Studios", user_studios_path(@current_user)%></span>
+        <span><%= link_to "Back to Account Page", user_path(@current_user) %></span>
+</div>

@@ -18,7 +18,7 @@
     <%= f.collection_select :studio_id, @current_user.studios.all, :id, :name %>
 
     <%= hidden_field 'review', "user_id", :value => @current_user.id %>
-
+    <br><br>
     <%= f.label :rating %>
     <%= f.number_field :rating, max: 5, min: 0 %>/5
     <br> <br>

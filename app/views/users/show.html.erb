@@ -1,16 +1,24 @@
 <h1>Welcome <%="#{@user.username}"%></h1>
 
-<%= link_to "Your Studios", user_studios_path(@current_user) %><br>
-<%= link_to "Add a Studio", new_user_studio_path(@user) %><br>
-<%= link_to "See All Studios", '/studios' %><br><br>
+<h3>Studios</h3>
+<div>
+    <span><%= link_to "Your Studios", user_studios_path(@current_user) %></span>
+    <span><%= link_to "Add a Studio", new_user_studio_path(@user) %></span>
+    <span><%= link_to "See All Studios", '/studios' %></span>
+</div>
 
-<%= link_to "Your Reviews", user_reviews_path(@current_user) %><br>
-<%= link_to "Write a Review", new_user_review_path(@user) %><br>
-<%= link_to "See All Reviews", '/reviews' %><br><br>
+<h3>Reviews</h3>
+<div>
+    <span><%= link_to "Your Reviews", user_reviews_path(@current_user) %></span>
+    <span><%= link_to "Write a Review", new_user_review_path(@user) %></span>
+    <span><%= link_to "See All Reviews", '/reviews' %></span>
+    <span><%= link_to "See All 5-star Reviews", '/five_stars' %></span><br>
+</div>
 
-<%= link_to "See All 5-star Reviews", '/five_stars' %><br>
 
 <h3>Account Settings</h3>
-<%= link_to "Edit Account Details", edit_user_path(@user) %><br>
-<%= link_to "Log Out", '/logout' %><br>
-<%= link_to "Delete Account", @user, :method => :delete %><br><br>
+<div>
+    <span><%= link_to "Edit Account Details", edit_user_path(@user) %></span>
+    <span><%= link_to "Log Out", '/logout' %></span>
+    <span><%= link_to "Delete Account", @user, :method => :delete %></span>
+</div>

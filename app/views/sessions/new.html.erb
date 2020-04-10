@@ -9,4 +9,6 @@
     <%= submit_tag 'Login' %>
 <% end %>
 <br>
-<%= link_to "Not a user? Sign up!", new_user_path %>
+<span><%= link_to('Log in with Github!', '/auth/github') %></span>
+<span><%= link_to "Not a user? Sign up!", new_user_path %></span>
+<span><%= link_to "Back to Homepage", '/' %></span>

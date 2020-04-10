@@ -2,8 +2,9 @@
 
 <ol>
     <% @five_star_reviews.each do |review| %>
-        <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> - <%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %> - <%= link_to "Delete Review", review, :method => :delete %></li>
+        <li><%= link_to review.studio.name, user_review_path(@current_user, review) %> <span><%= link_to "Edit Review Details", edit_user_review_path(@current_user, review) %></span> <span><%= link_to "Delete Review", review, :method => :delete %></span></li>
     <% end %>
 </ol>
+<br>
 
-<%= link_to "Back to Account Page", user_path(@current_user) %>
+<span><%= link_to "Back to Account Page", user_path(@current_user) %></span>

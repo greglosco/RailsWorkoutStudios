@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
 
     def edit
         if @review && @review.user == @current_user
-        else redirect_to '/reviewindex'
+        else redirect_to '/reviews'
         end
     end
 
@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
         if @review && @review.user == @current_user
             @review.destroy 
             redirect_to user_reviews_path(@current_user)
-        else redirect_to '/reviewindex'
+        else redirect_to '/reviews'
         end
     end
 

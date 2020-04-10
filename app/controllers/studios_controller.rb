@@ -34,7 +34,7 @@ class StudiosController < ApplicationController
 
     def edit
         if @studio && @studio.user == @current_user
-        else redirect_to '/studioindex'
+        else redirect_to '/studios'
         end
     end
 
@@ -47,7 +47,7 @@ class StudiosController < ApplicationController
         if @studio && @studio.user == @current_user
             @studio.destroy 
             redirect_to user_studios_path(@current_user)
-        else redirect_to '/studioindex'
+        else redirect_to '/studios'
         end
     end
 
