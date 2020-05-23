@@ -13,6 +13,7 @@ amazon:
   secret_access_key: <%= ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'] %>
   region: <%= ENV['BUCKETEER_AWS_REGION'] %>
   bucket: <%= ENV['BUCKETEER_BUCKET_NAME'] %>
+  master_key: <%= ENV['be1a854db42ea8482ef35cfbe6bf8790880c35e7f295f7bcac16ec22ef122c8e694e3860d4796c3d7ae6beebc33c569df221e0ee06a5fb0114aa5cf2ac591b86']
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
