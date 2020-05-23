@@ -40,11 +40,6 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :amazon
-  service: S3
-  access_key_id: <%= ENV['BUCKETEER_AWS_ACCESS_KEY_ID'] %>
-  secret_access_key: <%= ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'] %>
-  region: <%= ENV['BUCKETEER_AWS_REGION'] %>
-  bucket: <%= ENV['BUCKETEER_BUCKET_NAME'] %>
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
