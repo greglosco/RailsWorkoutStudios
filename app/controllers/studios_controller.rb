@@ -1,5 +1,3 @@
-require 'pry'
-
 class StudiosController < ApplicationController
     before_action :set_studio, :only => [:show, :edit, :update, :destroy]
 
