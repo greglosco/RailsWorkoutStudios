@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get '/studioindex', :to => 'studios#index_all'
   get '/reviewindex', :to => 'reviews#index_all'
   get '/five_stars', :to => 'reviews#five_stars'
-  match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
+  match '/app/github/callback', to: 'sessions#create', via: [:get, :post]
   
   resources :reviews
   resources :studios do
